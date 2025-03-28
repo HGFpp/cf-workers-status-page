@@ -1,39 +1,39 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
-  logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
-  collectResponseTimes: true # collects avg response times from CRON locations
+  title: '状态页面'
+  url: 'https://status-page.eidam.dev' # 用于Slack消息
+  logo: logo-192x192.png # public/文件夹中的图片
+  daysInHistogram: 90 # 要在直方图中显示的天数
+  collectResponseTimes: true # 从CRON位置收集平均响应时间
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  allmonitorsOperational: '所有系统正常运行'
+  notAllmonitorsOperational: '部分系统运行异常'
+  monitorLabelOperational: '正常运行'
+  monitorLabelNotOperational: '运行异常'
+  monitorLabelNoData: '无数据'
+  dayInHistogramNoData: '无数据'
+  dayInHistogramOperational: '运行正常'
+  dayInHistogramNotOperational: '个故障' # xx个故障记录
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+  - id: workers-cloudflare-com # 唯一标识符
+    name: OPEN API
+    description: '您编写代码，我们处理其余的事情。' # 默认为空
+    url: 'https://usgcc-usg.hf.space/' # 要获取的URL
+    method: GET # 默认为GET
+    expectStatus: 200 # 运行状态，默认为200
+    followRedirect: false # 是否跟随重定向，默认为false
+    linkable: false # 允许标题作为链接，默认为true
 
   - id: www-cloudflare-com
     name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
+    description: '为连接到互联网的任何事物而构建。'
     url: 'https://www.cloudflare.com'
     method: GET
     expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+    linkable: true # 允许标题作为链接，默认为true
 
   - id: blog-cloudflare-com
-    name: The Cloudflare Blog
+    name: Cloudflare博客
     url: 'https://blog.cloudflare.com/'
     method: GET
     expectStatus: 200
